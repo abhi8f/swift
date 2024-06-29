@@ -17,3 +17,12 @@ export class Department {
         this.deptName = ''; 
     }
 }
+
+export class LoginModel {
+    emailId: string;
+    password: string;
+    constructor() {
+        this.emailId = '';
+        this.password = '';
+    }
+}
