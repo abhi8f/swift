@@ -1,2 +1,3 @@
 export const environment = {
-    API_URL: 'https://freeapi.miniprojectideas.com/api/Tickets/'};
+    API_URL: 'http://localhost:8080/'
+};

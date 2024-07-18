@@ -1,1 +1,89 @@
-<p>layout works!</p>
+<button (click)="toggleSidebar()"
+    class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+    <span class="sr-only">Open sidebar</span>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="25px" height="25px">
+        <path d="M 5 8 A 2.0002 2.0002 0 1 0 5 12 L 45 12 A 2.0002 2.0002 0 1 0 45 8 L 5 8 z M 5 23 A 2.0002 2.0002 0 1 0 5 27 L 45 27 A 2.0002 2.0002 0 1 0 45 23 L 5 23 z M 5 38 A 2.0002 2.0002 0 1 0 5 42 L 45 42 A 2.0002 2.0002 0 1 0 45 38 L 5 38 z" />
+    </svg>
+</button>
+
+<aside id="separator-sidebar"
+    [ngClass]="{'translate-x-0': sidebarOpen, '-translate-x-full': !sidebarOpen}"
+    class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform sm:translate-x-0 flex flex-col"
+    aria-label="Sidebar">
+    <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800 flex flex-col">
+        <h1 class="text-3xl font-bold mb-4">SWIFT</h1>
+        <ul class="space-y-2 font-medium flex-grow">
+            <li>
+                <a routerLink="/dashboard"
+                    class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <span class="ms-3">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/employee"
+                    class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <span class="ms-3">Employee</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/department"
+                    class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <span class="ms-3">Department</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/ticket"
+                    class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <span class="ms-3">Ticket</span>
+                </a>
+            </li>
+            
+            <li>
+                <a routerLink="/new-ticket"
+                    class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <span class="ms-3">New Ticket</span>
+                </a>
+            </li>
+            <li>
+                <a href="#"
+                    class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <span class="flex-1 ms-3 whitespace-nowrap">Kanban</span>
+                    <span
+                        class="inline-flex items-center justify-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span>
+                </a>
+            </li>
+            <li>
+                <a href="#"
+                    class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <span class="flex-1 ms-3 whitespace-nowrap">Inbox</span>
+                    <span
+                        class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">3</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="space-y-2 font-medium border-t border-gray-200 dark:border-gray-700">
+            <li>
+                <a href="#"
+                    class="flex items-center p-2 text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group">
+                    <span class="ms-3">Upgrade to Pro</span>
+                </a>
+            </li>
+            <li>
+                <a href="#"
+                    class="flex items-center p-2 text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group">
+                    <span class="ms-3">Documentation</span>
+                </a>
+            </li>
+            <li>
+                <a href="#"
+                    class="flex items-center p-2 text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group">
+                    <span class="ms-3">Help</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</aside>
+
+<div class="p-4 sm:ml-64">
+    <router-outlet></router-outlet>
+</div>
