@@ -18,6 +18,12 @@ export class LoginComponent {
   #router = inject(Router);
 
   onLogin() {
-    this.#empService.login(this.loginObj);
+    this.#empService.login(this.loginObj).subscribe(apiData => {
+
+      if (apiData.result) {
+        localStorage.setItem('ticketData', JSON.stringify(apiData.data));
+        this.#router.navigateByUrl('/dashboard');
+      }
+    });;
   }
 }

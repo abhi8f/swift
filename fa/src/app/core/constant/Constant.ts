@@ -4,7 +4,7 @@ export const Constant = {
         CREATE_DEPARTMENT: 'CreateDepartment',
         UPDATE_DEPARTMENT: 'UpdateDepartment',
         DELETE_DEPARTMENT: 'DeleteDepartment?id=',
-        LOGIN: 'Login'
+        LOGIN: 'v1/employee/login'
     },
 
     VALIDATION_MESSAGE: {

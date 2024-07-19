@@ -30,6 +30,9 @@ export class LayoutComponent {
     const localData = localStorage.getItem('ticketData');
     if (localData) {
       this.loggedData = JSON.parse(localData);
+      console.log(this.loggedData);
+    } else {
+      console.error('No data found in local storage');
     }
   }
 

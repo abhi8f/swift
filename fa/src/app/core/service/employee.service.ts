@@ -13,9 +13,7 @@ export class EmployeeService {
   constructor(private http: HttpClient) { }
   
   
-  login(loginObj: LoginModel) {
-    this.http.get<APIResponse>('http://localhost:8080/').subscribe(apiData => {
-      console.log(apiData);
-    });
+  login(loginObj: LoginModel): Observable<APIResponse> {
+    return this.http.post<APIResponse>(environment.API_URL + Constant.API_END_POINT.LOGIN, loginObj);
   }
 }
