@@ -9,10 +9,13 @@ import { Constant } from '../constant/Constant';
   providedIn: 'root'
 })
 export class EmployeeService {
-
+  
   constructor(private http: HttpClient) { }
-
-  login(obj: LoginModel): Observable<APIResponse> {
-    return this.http.post<APIResponse>(environment.API_URL + Constant.API_END_POINT.LOGIN,obj);
+  
+  
+  login(loginObj: LoginModel) {
+    this.http.get<APIResponse>('http://localhost:8080/').subscribe(apiData => {
+      console.log(apiData);
+    });
   }
 }
